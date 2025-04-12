@@ -1,5 +1,23 @@
 # Ofxer
 
+Ylan's Fork to Process Robinhood Gold Card CSV into Moneydance
+
+Prep:
+- clone repo
+- `cat python 3.13.3 > .tool-versions`
+- `mise install`
+- `brew install nushell`
+- `pip install csv2ofx pandas`
+
+Convert:
+```
+$ ./robinhood_to_ofx ~/Downloads/c10a5cdc-2ac8-408e-8762-b8318182866d.csv
+```
+
+The written `output.ofx` can be imported in Moneydance
+
+---
+
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 <img src="./ofxer.png" width="400">
@@ -108,4 +126,3 @@ shinsei = Ofxer('data/JPY_CH_.csv', options['shinsei'])
 print(shinsei._df)
 shinsei.write_ofx('shinsei.ofx')
 ```
-

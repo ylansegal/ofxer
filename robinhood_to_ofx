@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+# Usage
+#   robinhood_to_ofx input.csv
+#
+# It will create output.ofx
+
+input_file=$1
+
+python ofxer.py \
+  --skiprows 1 \
+  --usecols 0 1 2 \
+  --output output.ofx \
+  <(nu -c "open ${1} | select Date Merchant Amount | to csv")
