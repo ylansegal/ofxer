@@ -10,4 +10,4 @@ python ofxer.py \
   --skiprows 1 \
   --usecols 0 1 2 \
   --output output.ofx \
-  <(nu -c "open ${1} | select Date Merchant Amount | to csv")
+  <(nu -c "open ${1} | where Status == Posted | select Date Merchant Amount | to csv")
