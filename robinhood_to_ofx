@@ -2,12 +2,12 @@
 # Usage
 #   robinhood_to_ofx input.csv
 #
-# It will create output.ofx
+# It will create robinhood.ofx
 
 input_file=$1
 
 python ofxer.py \
   --skiprows 1 \
   --usecols 0 1 2 \
-  --output output.ofx \
+  --output robinhood.ofx \
   <(nu -c "open ${1} | where Status == Posted | select Date Merchant Amount | to csv")
