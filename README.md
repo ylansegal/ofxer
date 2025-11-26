@@ -1,6 +1,6 @@
 # Ofxer
 
-Ylan's Fork to Process Robinhood Gold Card CSV into Moneydance
+Ylan's Fork to Process Robinhood Gold Card and Bank of America CSV into Moneydance
 
 Prep:
 - clone repo
@@ -14,7 +14,15 @@ Convert:
 $ ./robinhood_to_ofx ~/Downloads/c10a5cdc-2ac8-408e-8762-b8318182866d.csv
 ```
 
-The written `output.ofx` can be imported in Moneydance
+The written `robinhood.ofx` can be imported in Moneydance
+
+For Bank of America, the CSV needs to be first edited by hand to remove the preamble
+
+```
+```
+$ ./boa_to_ofx ~/Downloads/c10a5cdc-2ac8-408e-8762-b8318182866d.csv
+```
+```
 
 ---
 

@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+# Usage
+#   robinhood_to_ofx input.csv
+#
+# It will create bao.ofx
+
+input_file=$1
+
+python ofxer.py \
+  --skiprows 1 \
+  --usecols 0 1 2 \
+  --output boa.ofx \
+    <(./_boa_to_csv $input_file)

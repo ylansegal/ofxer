@@ -1,0 +1,5 @@
+#!/usr/bin/env nu
+
+def main [filename: string] {
+    open $filename | where Amount != '' | select Date Description Amount | update Amount { |row| ($row.Amount | into string | str replace --all ',' '' | into float) * -1 } | to csv
+}
